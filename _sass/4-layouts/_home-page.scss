@@ -69,6 +69,19 @@
   }
 }
 
+.article__type {
+  margin: 12px 0 12px;
+  font-size: 16px;
+  color: #921010;
+  line-height: 1;
+  a {
+    color: $light-gray;
+  }
+  @media only screen and (max-width: $mobile) {
+    font-size: 14px;
+  }
+}
+
 .article__excerpt {
   margin-bottom: 12px;
   font-size: 14px;

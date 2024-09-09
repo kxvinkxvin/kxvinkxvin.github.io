@@ -42,9 +42,8 @@
                     <time class="article__date"
                       datetime="{{ post.date | date_to_xmlschema }}">{% assign date_format = site.minima.date_format | default: "%b %-d, %Y" %}{{ post.date | date: date_format }}</time>
                   </div>
-
                   <h2 class="article__title">
-                    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+                    <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title  }}</a>
                   </h2>
 
                   <p class="article__excerpt">{{ post.description }}</p>

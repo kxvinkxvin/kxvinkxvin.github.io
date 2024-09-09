@@ -13,7 +13,9 @@ I've been passionate about breaking things in the digital world for over 9 years
 
 I graduated with a Bachelor of Science (BSc.) in Computer Science from Dublin City University in 2022 -- highly regarded as one of the most complex and technical IT-based degrees in the country.
 
-Currently, I hold both the Offensive Security Certified Professional (OSCP) and Offensive Security Web Expert (OSWE) certifications -- elite credentials that test real-world penetration testing and web exploitation skills. Both of these certificates have been achieved at the ages of 19 and 20 respectively, making me one of the youngest in Europe/Ireland to attain both.
+Currently, I am undergoing the Offensive Experienced Penetration Tester (OSEP), and intend on becoming the youngest OSCE3 holder in both Ireland & Europe. 
+
+I hold both the Offensive Security Certified Professional (OSCP) and Offensive Security Web Expert (OSWE) certifications -- elite credentials that test real-world penetration testing and web exploitation skills. Both of these certificates have been achieved at the ages of 19 and 20 respectively, making me one of the youngest in Europe/Ireland to attain both.
 
 ![](/images/certs.jpg)
 
