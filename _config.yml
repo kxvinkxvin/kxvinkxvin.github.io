@@ -1,8 +1,9 @@
-title: Kevin Daniel | Links
-description: All the links you need to know for Kevin Daniel. Cybersecurity + AI Entrepreneur, Founder of Breached Labs, OSCE3 Holder
+title: Kevin Daniel
+description: Kevin Daniel | Cybersecurity + AI Entrepreneur
 baseurl: ""
 url: ""
 github_username: kxvinkxvin
+image: assets/images/profile.png
 
 # Build settings
 markdown: kramdown

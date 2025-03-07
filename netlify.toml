@@ -1,0 +1,15 @@
+[build]
+  publish = "_site"
+  command = "jekyll build"
+
+# Serve index.html for any path that doesn't exist
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Ensure _redirects file is included in the build
+[build.processing]
+  skip_processing = false
+[build.processing.html]
+  pretty_urls = true 
