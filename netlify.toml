@@ -1,6 +1,6 @@
 [build]
   publish = "_site"
-  command = "jekyll build"
+  command = "bundle exec jekyll build"
 
 # Serve index.html for any path that doesn't exist
 [[redirects]]
