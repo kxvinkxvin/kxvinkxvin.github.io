@@ -6,9 +6,6 @@
   JEKYLL_ENV = "production"
   RUBY_VERSION = "3.2.2"
 
-[[plugins]]
-  package = "@netlify/plugin-jekyll"
-
 # Serve index.html for any path that doesn't exist
 [[redirects]]
   from = "/*"
