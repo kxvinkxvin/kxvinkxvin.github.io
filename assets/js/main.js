@@ -35,7 +35,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const subscribeButton = document.querySelector('.subscribe-button');
     if (subscribeButton) {
         subscribeButton.addEventListener('click', function () {
-            window.location.href = 'https://joinsecurity.club';
+            const newsletterForm = document.getElementById('newsletter-form');
+            if (newsletterForm) {
+                newsletterForm.scrollIntoView({ behavior: 'smooth' });
+                // Focus on the email input after scrolling
+                setTimeout(() => {
+                    const emailInput = newsletterForm.querySelector('input[type="email"]');
+                    if (emailInput) emailInput.focus();
+                }, 800);
+            }
         });
     }
 

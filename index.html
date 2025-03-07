@@ -95,6 +95,22 @@ layout: default
             Cybersecurity</a>
         <a href="https://joinsecurity.club/recommended-cybersecurity-ai-books" class="link">Recommended Cybersecurity +
             AI Books</a>
+
+        <h4 style="text-align: center; margin-top: 20px;">Stay Updated</h4>
+        <div class="newsletter-container">
+            <form id="newsletter-form" class="newsletter-form" method="POST" data-netlify="true" name="newsletter"
+                netlify-honeypot="bot-field">
+                <p class="hidden">
+                    <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </p>
+                <div class="form-group">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <button type="submit" class="newsletter-button">Subscribe</button>
+                </div>
+                <input type="hidden" name="form-name" value="newsletter">
+                <input type="hidden" name="source" value="personal-website">
+            </form>
+        </div>
     </div>
 </div>
 
@@ -215,6 +231,48 @@ Dg==
                 setTimeout(function () {
                     copyBtn.textContent = "Copy to Clipboard";
                 }, 2000);
+            });
+        }
+
+        // Newsletter form handling
+        var newsletterForm = document.getElementById("newsletter-form");
+        if (newsletterForm) {
+            newsletterForm.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                var emailInput = this.querySelector('input[name="email"]');
+                var email = emailInput.value.trim();
+
+                if (email) {
+                    // This uses Netlify Forms which will collect the submission
+                    // without directly exposing your Mailerlite connection
+                    fetch("/", {
+                        method: "POST",
+                        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                        body: new URLSearchParams({
+                            "form-name": "newsletter",
+                            "email": email,
+                            "source": "personal-website"
+                        }).toString()
+                    })
+                        .then(function () {
+                            // Clear the input
+                            emailInput.value = "";
+
+                            // Show success message
+                            var message = document.createElement("div");
+                            message.textContent = "Thanks for subscribing!";
+                            message.className = "copy-message";
+                            document.body.appendChild(message);
+
+                            setTimeout(function () {
+                                document.body.removeChild(message);
+                            }, 3000);
+                        })
+                        .catch(function (error) {
+                            console.error("Error:", error);
+                        });
+                }
             });
         }
     });
@@ -344,6 +402,77 @@ Dg==
         .pgp-button {
             margin-left: 0;
             margin-top: 5px;
+        }
+    }
+
+    /* Newsletter Styles */
+    .newsletter-container {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
+
+    .newsletter-form {
+        width: 100%;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .form-group {
+        display: flex;
+        border-radius: 4px;
+        overflow: hidden;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        border: 1px solid var(--border-color);
+        transition: all 0.3s ease;
+    }
+
+    .form-group:focus-within {
+        box-shadow: 0 4px 15px rgba(29, 161, 242, 0.3);
+        border-color: #1DA1F2;
+    }
+
+    .newsletter-form input[type="email"] {
+        flex: 1;
+        padding: 12px 15px;
+        border: none;
+        background-color: var(--accent-color);
+        color: var(--text-color);
+        font-family: 'Space Mono', monospace;
+        font-size: 0.9rem;
+        outline: none;
+    }
+
+    .newsletter-form input[type="email"]::placeholder {
+        color: #999;
+    }
+
+    .newsletter-button {
+        padding: 12px 20px;
+        background-color: #1DA1F2;
+        color: white;
+        border: none;
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-size: 0.85rem;
+    }
+
+    .newsletter-button:hover {
+        background-color: #0c85d0;
+    }
+
+    @media (max-width: 480px) {
+        .form-group {
+            flex-direction: column;
+        }
+
+        .newsletter-button {
+            width: 100%;
         }
     }
 </style>
