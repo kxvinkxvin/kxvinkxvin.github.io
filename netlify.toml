@@ -1,6 +1,13 @@
 [build]
-  publish = "."
-  command = "echo 'Static site, no build required'"
+  publish = "_site"
+  command = "bundle exec jekyll build"
+
+[build.environment]
+  JEKYLL_ENV = "production"
+  RUBY_VERSION = "3.2.2"
+
+[[plugins]]
+  package = "@netlify/plugin-jekyll"
 
 # Serve index.html for any path that doesn't exist
 [[redirects]]
